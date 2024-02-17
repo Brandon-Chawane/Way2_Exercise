@@ -10,9 +10,9 @@ import java.io.IOException;
 
 
 
-public class TakeScreenShot {
+public class  TakeScreenShot {
 
-    public static String screenShotdir = System.getProperty("C:/Users/brand/OneDrive/Documents/AutomationClass/Way2_Exercise/src/test/java/ScreenShots");
+    public static String screenShotdir = System.getProperty("user.dir") + "/Screenshots";
 
     public void takeSnapShot(WebDriver driver, String screenShotName){
         TakesScreenshot ts = (TakesScreenshot) driver;
