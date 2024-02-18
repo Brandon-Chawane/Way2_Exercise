@@ -1,0 +1,48 @@
+Task: Automation
+Automate the test cases listed below. You are free to use any OpenSource Automation Framework,
+but we strongly encourage you to create your own.
+Expectations:
+• Assessments should be done in Python or Java
+ • Object-Oriented Programming
+o This framework should be object-oriented and display the following techniques:
+• Reporting
+•	The framework should output a rich report which contains outputs and screenshots
+• A Readme
+•	This file should explain how to use and run your tests
+•	This file should also include a list of the tools used in creating your framework
+ • This assessment should be submitted to a private repository on Bitbucket or GitHub, after
+completion you will be asked to add another user as a contributor to evaluate your work.
+
+Tasks:
+Using http://www.way2automation.com/angularjs-protractor/banking/#/login
+• Test 1
+o Login as a Customer
+o on the customers first account
+ Deposit 1500
+ Validate the Deposit Was successful
+o Logout
+
+
+• Test 2
+o Login as a Customer
+o On each account
+ Deposit 1500
+ Validate the Deposit Was successful
+o Logout
+
+
+• Test 3
+o Login as a Customer
+o On the customers first account
+ Deposit 31459
+ Validate the Deposit Was successful
+ Open Transactions
+ Validate the Transaction appears
+ Open Withdrawal
+ Withdraw 31459
+ Validate the current Balance is the original balance
+ Open Transactions
+ Validate the Transaction appears
+o Logout
+
+
