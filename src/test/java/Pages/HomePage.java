@@ -11,14 +11,12 @@ import static Utils.BrowserFactory.fluentWait;
 public class HomePage {
 
     WebDriver driver;
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[4]/div/form/div/input")
-    WebElement amountField;
-    @FindBy(xpath = "//button[@class='btn home'][contains(.,'Home')]")
-    public WebElement homeBtn;
-
 
     @FindBy(xpath = "//button[@class='btn btn-primary btn-lg'][contains(.,'Customer Login')]")
     public WebElement customerLoginbtn;
+
+    @FindBy(xpath = "//button[contains(@class,'btn btn-default')]")
+   public  WebElement customerLoginBtn2;
 
     @FindBy(xpath = "//select[contains(@id,'userSelect')]")
     public WebElement userSelectMenu;
@@ -38,27 +36,34 @@ public class HomePage {
     @FindBy(xpath = "//span[@class='error ng-binding'][contains(.,'Deposit Successful')]")
     public WebElement depositSuccessful;
 
+    @FindBy(xpath = "//span[@class='error ng-binding'][contains(.,'Deposit Successful')]")
+    WebElement successfulLargeDeposit;
+
 
     @FindBy(xpath = "//button[contains(text(),'Logout')]")
     public WebElement logOutBtn;
 
     @FindBy(id = "accountSelect")
     WebElement accountSelect;
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[4]/div/form/div/input")
+    WebElement withDrawalField;
 
+    @FindBy(xpath = "//input[contains(@type,'number')]")
+    WebElement cashDepositField;
+
+    @FindBy(xpath = "//input[contains(@ng-model,'amount')]")
+    WebElement thirdAccAmountField;
+
+    @FindBy(xpath = "//button[@ng-class='btnClass3'][contains(.,'Withdrawl')]")
+    WebElement withDrawalButton;
+
+    @FindBy(xpath = "//button[@type='submit'][contains(.,'Withdraw')]")
+    WebElement withDrawCashButton;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
-
-    public void setHomeBtn() {
-        try {
-            fluentWait(driver, homeBtn);
-            homeBtn.click();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public void setCustomerLoginbtn() {
         try {
@@ -77,6 +82,16 @@ public class HomePage {
         } catch (Exception e) {
             throw new RuntimeException(e + "Not found");
 
+        }
+
+    }
+
+    public void setWithDrawalButton(){
+        try{
+            fluentWait(driver,withDrawalButton);
+            withDrawalButton.click();
+        }catch (Exception e){
+            throw new RuntimeException(e);
         }
 
     }
@@ -102,6 +117,7 @@ public class HomePage {
     public void setTxtdeposit() {
         try {
             fluentWait(driver, txtdeposit);
+            txtdeposit.clear();
             txtdeposit.sendKeys("1500");
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -109,19 +125,15 @@ public class HomePage {
 
     }
 
-    public void setClearDeposit() {
-
-    }
-
     public void setDepositLargerAmount() {
-        fluentWait(driver, txtdeposit);
-        txtdeposit.sendKeys("31459");
+        fluentWait(driver,cashDepositField );
+        cashDepositField.sendKeys("31459");
     }
 
     public void setWithDrawLargerAmount() {
         try {
-            fluentWait(driver, txtdeposit);
-            txtdeposit.sendKeys("-31459");
+            fluentWait(driver, withDrawalField);
+            withDrawalField.sendKeys("31459");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -157,8 +169,7 @@ public class HomePage {
             throw new RuntimeException(e);
         }
     }
-
-    public void setAccountSelectMenu() {
+    public void setAccountSelectMenu1002() {
         try {
             fluentWait(driver, accountSelect);
             Select userSelect = new Select(accountSelect);
@@ -170,7 +181,7 @@ public class HomePage {
 
     }
 
-    public void setAccountSelectMenu1() {
+    public void setAccountSelectMenu1003() {
         try {
             fluentWait(driver, accountSelect);
             Select userSelect = new Select(accountSelect);
@@ -181,17 +192,34 @@ public class HomePage {
         }
 
     }
-
-
-
-    public void amountSet() {
+    public void validateLargeDepositSuccessful() {
         try {
-            fluentWait(driver,amountField);
-            amountField.clear();
-            amountField.sendKeys("1500");
+            successfulLargeDeposit.isDisplayed();
         }catch (Exception e){
-            throw  new RuntimeException(e);
+            throw new RuntimeException(e);
         }
 
     }
+
+    public void setThirdAccAmountField(){
+        try {
+            fluentWait(driver, thirdAccAmountField);
+            thirdAccAmountField.clear();
+            thirdAccAmountField.sendKeys("1500");
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void setWithDrawCashButton(){
+        try {
+            fluentWait(driver, withDrawCashButton);
+            withDrawCashButton.click();
+
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
