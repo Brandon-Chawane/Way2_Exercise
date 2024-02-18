@@ -1,0 +1,93 @@
+
+
+
+---------------Way2 Assessment test cases------------
+
+
+Test 1
+
+
+click Customer Login button -
+
+select username-
+
+click login button-
+
+click deposit button-
+
+enter deposit amount-
+
+click cash deposit button-
+
+verify successful deposit-
+
+click log out button-
+
+
+Test 2
+
+
+
+select username -
+
+click login button-
+
+click deposit button-
+
+enter first amount--
+
+click deposit cash button-
+
+choose second account-
+
+enter second amount -
+
+click deposit button-
+
+choose third account-
+
+enter third amount-
+
+click cash deposit button-
+
+validate successful deposit-
+
+Log out
+
+
+
+Test 3
+
+
+
+select username-
+
+click login button-
+
+click deposit button-
+
+enter amount - 31459-
+
+click cash deposit button-
+
+validate successful deposit-
+
+click withdrawal button--
+
+enter withdrawal amount - 31459--
+
+click withdraw cash button--
+
+validate original amount--
+
+open transactions
+
+validate transaction appears
+
+click log out button
+
+
+
+
+
+
