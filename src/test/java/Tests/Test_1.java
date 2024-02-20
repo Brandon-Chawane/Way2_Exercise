@@ -117,6 +117,8 @@ public class Test_1 extends BaseClass {
         homePage.logOutBtn.click();
     }
 
+
+
 //----------------------------------------------------Test 3---------------------------
 
 
@@ -171,9 +173,9 @@ public class Test_1 extends BaseClass {
 
 
     @Test(dependsOnMethods = "clickWithDrawalButton")
-    public void stopTime() throws InterruptedException {
+    public void stopTime() {
         takeScreenShot.takeSnapShot(driver, "Wait");
-        Thread.sleep(5000);
+
     }
 
 
